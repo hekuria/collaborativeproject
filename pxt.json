@@ -2,7 +2,8 @@
     "name": "CollaborativeProject",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "darts": "*"
     },
     "files": [
         "main.blocks",

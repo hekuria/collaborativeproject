@@ -1,3 +1,25 @@
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    footballs.stopDart()
+})
+controller.down.onEvent(ControllerButtonEvent.Released, function () {
+	
+})
+controller.right.onEvent(ControllerButtonEvent.Released, function () {
+	
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
+controller.up.onEvent(ControllerButtonEvent.Released, function () {
+	
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
+let footballs: Dart = null
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -120,3 +142,21 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
+footballs = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Player)
