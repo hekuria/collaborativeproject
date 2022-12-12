@@ -1,6 +1,7 @@
 namespace SpriteKind {
     export const goal = SpriteKind.create()
     export const football = SpriteKind.create()
+    export const score = SpriteKind.create()
 }
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     footballs.setTrace(true)
@@ -14,6 +15,13 @@ controller.down.onEvent(ControllerButtonEvent.Released, function () {
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     footballs.throwDart()
 })
+function scoregoal () {
+    if (info.score() <= scoregoal2) {
+        game.over(true)
+    } else {
+        game.over(false)
+    }
+}
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     footballs.setTrace(true)
 })
@@ -75,6 +83,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let enemy1: Sprite = null
 let footballs: Dart = null
+let scoregoal2 = 0
+effects.confetti.startScreenEffect()
+scoregoal2 = game.askForNumber("set a score goal")
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -255,3 +266,4 @@ for (let index = 0; index < 3; index++) {
         `, SpriteKind.Enemy)
     enemy1.setPosition(randint(scene.screenWidth(), scene.screenHeight()), randint(scene.screenWidth(), scene.screenHeight()))
 }
+scoregoal()
