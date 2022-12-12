@@ -1,23 +1,23 @@
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-	
+    footballs.setTrace(true)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     footballs.stopDart()
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
-	
+    footballs.throwDart()
 })
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
-	
+    footballs.throwDart()
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-	
+    footballs.setTrace(true)
 })
 controller.up.onEvent(ControllerButtonEvent.Released, function () {
-	
+    footballs.throwDart()
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-	
+    footballs.setTrace(true)
 })
 let footballs: Dart = null
 scene.setBackgroundImage(img`
