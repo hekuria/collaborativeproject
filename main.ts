@@ -15,8 +15,8 @@ controller.down.onEvent(ControllerButtonEvent.Released, function () {
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     footballs.throwDart()
 })
-function scoregoal () {
-    if (info.score() <= scoregoal2) {
+function scoregoal2 () {
+    if (info.score() <= scoregoal) {
         game.over(true)
     } else {
         game.over(false)
@@ -83,9 +83,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let enemy1: Sprite = null
 let footballs: Dart = null
-let scoregoal2 = 0
+let scoregoal = 0
 effects.confetti.startScreenEffect()
-scoregoal2 = game.askForNumber("set a score goal")
+scoregoal = game.askForNumber("set a score goal")
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -225,7 +225,7 @@ footballs = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
+    `, SpriteKind.football)
 let goal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
