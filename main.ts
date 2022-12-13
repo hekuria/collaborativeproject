@@ -79,10 +79,10 @@ sprites.onOverlap(SpriteKind.football, SpriteKind.goal, function (sprite, otherS
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     enemy1.destroy()
-    game.over(false)
+    scoregoal2()
 })
-let enemy1: Sprite = null
 let footballs: Dart = null
+let enemy1: Sprite = null
 let scoregoal = 0
 effects.confetti.startScreenEffect()
 scoregoal = game.askForNumber("set a score goal")
@@ -208,24 +208,6 @@ scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
     `)
-footballs = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.football)
 let goal = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -266,4 +248,3 @@ for (let index = 0; index < 3; index++) {
         `, SpriteKind.Enemy)
     enemy1.setPosition(randint(scene.screenWidth(), scene.screenHeight()), randint(scene.screenWidth(), scene.screenHeight()))
 }
-scoregoal()
